@@ -1,0 +1,40 @@
+# Dockerfile-strapi-from-repo
+
+## Feature
+
+- Support cloning your strapi project from git repository.
+- Automatically copy .env from the root directory of the mount directory to the strapi directory.
+- Run the Strapi project
+
+## Environment Variables
+
+`GITHUB_REPO_URL`: Github repository name, only used to clone the repository from the docker container
+
+`GITHUB_USER`: Github username, only used to clone the repository from the docker container
+
+`GITHUB_TOKEN`: Github token, only used to clone the repository from the docker container
+
+`GITHUB_BRANCH`: Github repository branch, default is master, only used to clone the repository from the docker container
+
+You can put .env in the root directory of the mount directory, and the container will automatically move to the project directory(/host/data directory).
+
+## Directory
+
+Please mount the host directory to the container's `/host` directory.
+
+The container will automatically clone the strapi project to the `/host/data` folder.
+
+## Quick Start
+
+```
+docker run -d \
+  --name strapi-from-repo \
+  -e GITHUB_REPO_URL="https://github.com/your-username/your-repo.git" \
+  -e GITHUB_USER="your-username" \
+  -e GITHUB_TOKEN="your-token" \
+  -e GITHUB_BRANCH="your-branch" \
+  -p 1337:1337 \
+  -v /your/local/host/path:/host \
+  herfom/strapi-from-repo
+
+```
