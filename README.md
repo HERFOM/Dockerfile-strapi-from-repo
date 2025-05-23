@@ -16,6 +16,10 @@
 
 `GITHUB_BRANCH`: Github repository branch, default is master, only used to clone the repository from the docker container
 
+`GIT_AUTHOR_NAME` : The default is DockerContainer, which is used when git push
+
+`GIT_AUTHOR_EMAIL` : The default is DockerContainer, which is used when git push
+
 You can put .env in the root directory of the mount directory, and the container will automatically move to the project directory(/host/data directory).
 
 ## Directory
