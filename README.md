@@ -42,3 +42,24 @@ docker run -d \
   herfom/strapi-from-repo
 
 ```
+
+Docker Compose
+
+```
+version: '3'
+
+services:
+  strapi:
+    image: herfom/strapi-from-repo
+    container_name: strapi-from-repo
+    environment:
+      - GITHUB_REPO_URL=https://github.com/your-username/your-repo.git
+      - GITHUB_USER=your-username
+      - GITHUB_TOKEN=your-token
+      - GITHUB_BRANCH=your-branch
+    ports:
+      - "1337:1337"
+    volumes:
+      - /your/local/host/path:/host
+    restart: unless-stopped
+```
