@@ -30,8 +30,14 @@ The container will automatically clone the strapi project to the `/host/data` fo
 
 ## Prerequisites
 
-1. Modify your repository's strapi/.gitignore and comment out the `.tmp` directory and `.env` file. And git push to the git repository.
-2. Append the following content to your .env file
+1. Modify your repository's strapi/.gitignore and comment out the
+
+   - .`tmp`
+   - `public/uploads/*`
+   - `.env`
+
+   And git push to the git repository.
+2. Append the following content to your `.env` file
 
 ```
 #Github
