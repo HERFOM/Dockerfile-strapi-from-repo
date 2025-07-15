@@ -26,8 +26,8 @@ RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian bullseye main contrib 
     apt-get install -y --no-install-recommends git && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# --- 安装 Node.js 18 和 Yarn ---
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+# --- 安装 Node.js 22 和 Yarn ---
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
     apt-get install -y --no-install-recommends nodejs && \
     npm install -g yarn && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
