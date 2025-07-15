@@ -28,6 +28,19 @@ Please mount the host directory to the container's `/host` directory.
 
 The container will automatically clone the strapi project to the `/host/data` folder.
 
+## Prerequisites
+
+1. Modify your repository's strapi/.gitignore and comment out the `.tmp` directory and `.env` file. And git push to the git repository.
+2. Append the following content to your .env file
+
+```
+#Github
+GITHUB_REPO=YOUR_GITHUB_REPO
+GITHUB_BRANCH=YOUR_GITHUB_BRANCH
+GITHUB_USERNAME=YOUR_GITHUB_USERNAME
+GITHUB_TOKEN=YOUR_GITHUB_TOKEN
+```
+
 ## Quick Start
 
 ```
